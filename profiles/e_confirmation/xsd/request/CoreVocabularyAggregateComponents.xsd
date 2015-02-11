@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Library:           Core Vocabulary Common Aggregate Components
+  Module:            xsd/request-docs/CoreVocabularyAggregateComponents.xsd
+  Generated on:      2015-02-04 07:13z
+-->
+<xsd:schema xmlns="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+            xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+            xmlns:cvc="http://www.w3.org/ns/corevocabulary/BasicComponents"
+            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+            targetNamespace="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            version="1">
+   <!-- ===== Imports ===== -->
+   <xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+               schemaLocation="CoreVocabularyBasicComponents.xsd"/>
+   <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+               schemaLocation="../common/UBL-CommonAggregateComponents-2.1.xsd"/>
+   <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+               schemaLocation="../common/UBL-CommonBasicComponents-2.1.xsd"/>
+   <!-- ===== Element Declarations ===== -->
+   <xsd:element name="BirthPlaceCvlocation" type="CvlocationType"/>
+   <xsd:element name="BusinessAddress" type="cac:AddressType"/>
+   <xsd:element name="CitizenshipJurisdiction" type="JurisdictionType"/>
+   <xsd:element name="CompanyActivity" type="CompanyActivityType"/>
+   <xsd:element name="Cvaddress" type="CvaddressType"/>
+   <xsd:element name="Cvbusiness" type="CvbusinessType"/>
+   <xsd:element name="Cvlocation" type="CvlocationType"/>
+   <xsd:element name="Cvperson" type="CvpersonType"/>
+   <xsd:element name="DeathPlaceCvlocation" type="CvlocationType"/>
+   <xsd:element name="HealthCareProviderCvaddress" type="CvaddressType"/>
+   <xsd:element name="HealthInsuranceOrganizationCvaddress" type="CvaddressType"/>
+   <xsd:element name="Jurisdiction" type="JurisdictionType"/>
+   <xsd:element name="RequestingParty" type="cac:PartyType"/>
+   <xsd:element name="ResidencyJurisdiction" type="JurisdictionType"/>
+   <!-- ===== Type Definitions ===== -->
+   <!-- ===== Aggregate Business Information Entity Type Definitions ===== -->
+   <xsd:complexType name="CompanyActivityType">
+      <xsd:annotation>
+         <xsd:documentation>
+            <ccts:Component>
+               <ccts:ComponentType>ABIE</ccts:ComponentType>
+               <ccts:DictionaryEntryName>Company Activity. Details</ccts:DictionaryEntryName>
+               <ccts:Definition>Activity performed by the legal entity</ccts:Definition>
+               <ccts:ObjectClass>Company Activity</ccts:ObjectClass>
+            </ccts:Component>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element ref="cvc:ActivityCode" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Company Activity. Activity_ Code. Code</ccts:DictionaryEntryName>
+                     <ccts:Definition>A code identifying the activity</ccts:Definition>
+                     <ccts:Cardinality>1</ccts:Cardinality>
+                     <ccts:ObjectClass>Company Activity</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Activity</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Code</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Code</ccts:RepresentationTerm>
+                     <ccts:DataType>Code. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cvc:ActivityDescription" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Company Activity. Activity_ Description. Text</ccts:DictionaryEntryName>
+                     <ccts:Definition>Textual description of the activity</ccts:Definition>
+                     <ccts:Cardinality>1</ccts:Cardinality>
+                     <ccts:ObjectClass>Company Activity</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Activity</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Description</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Text</ccts:RepresentationTerm>
+                     <ccts:DataType>Text. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CvaddressType">
+      <xsd:annotation>
+         <xsd:documentation>
+            <ccts:Component>
+               <ccts:ComponentType>ABIE</ccts:ComponentType>
+               <ccts:DictionaryEntryName>Cvaddress. Details</ccts:DictionaryEntryName>
+               <ccts:Definition>Address</ccts:Definition>
+               <ccts:ObjectClass>Cvaddress</ccts:ObjectClass>
+            </ccts:Component>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element ref="cvc:AdminunitFirstline" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvaddress. Adminunit Firstline. Text</ccts:DictionaryEntryName>
+                     <ccts:Definition>First line of admin unit of an Cvaddress</ccts:Definition>
+                     <ccts:Cardinality>0..n</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvaddress</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Adminunit Firstline</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Text</ccts:RepresentationTerm>
+                     <ccts:DataType>Text. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CvbusinessType">
+      <xsd:annotation>
+         <xsd:documentation>
+            <ccts:Component>
+               <ccts:ComponentType>ABIE</ccts:ComponentType>
+               <ccts:DictionaryEntryName>Cvbusiness. Details</ccts:DictionaryEntryName>
+               <ccts:Definition>A Core Vocabulary Business</ccts:Definition>
+               <ccts:ObjectClass>Cvbusiness</ccts:ObjectClass>
+            </ccts:Component>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element ref="cvc:LegalID" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvbusiness. Legal Identifier. Identifier</ccts:DictionaryEntryName>
+                     <ccts:Definition>The legal identifier</ccts:Definition>
+                     <ccts:Cardinality>1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvbusiness</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Legal Identifier</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+                     <ccts:DataType>Identifier. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cvc:LegalName" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvbusiness. Legal Name. Text</ccts:DictionaryEntryName>
+                     <ccts:Definition>Legal Name of a Cvbusiness</ccts:Definition>
+                     <ccts:Cardinality>0..n</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvbusiness</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Legal Name</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Text</ccts:RepresentationTerm>
+                     <ccts:DataType>Text. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cvc:AlternativeName" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvbusiness. Alternative Name. Text</ccts:DictionaryEntryName>
+                     <ccts:Definition>Alternative Name of a Cvbusiness</ccts:Definition>
+                     <ccts:Cardinality>0..n</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvbusiness</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Alternative Name</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Text</ccts:RepresentationTerm>
+                     <ccts:DataType>Text. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cvc:CompanyStatusCode" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvbusiness. Company Status. Code</ccts:DictionaryEntryName>
+                     <ccts:Definition>Identifier for the company's status</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvbusiness</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Company Status</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Code</ccts:RepresentationTerm>
+                     <ccts:DataType>Code. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cvc:CompanyTypeCode" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvbusiness. Company Type. Code</ccts:DictionaryEntryName>
+                     <ccts:Definition>Identifier for the company's type</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvbusiness</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Company Type</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Code</ccts:RepresentationTerm>
+                     <ccts:DataType>Code. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cva:CompanyActivity" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvbusiness. Company Activity</ccts:DictionaryEntryName>
+                     <ccts:Definition>Idenifier for the company's activities</ccts:Definition>
+                     <ccts:Cardinality>0..n</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvbusiness</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Company Activity</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Company Activity</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Company Activity</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cva:BusinessAddress" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvbusiness. Business_ Address. Address</ccts:DictionaryEntryName>
+                     <ccts:Definition>The address of the company</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvbusiness</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Business</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Address</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Address</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Address</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CvlocationType">
+      <xsd:annotation>
+         <xsd:documentation>
+            <ccts:Component>
+               <ccts:ComponentType>ABIE</ccts:ComponentType>
+               <ccts:DictionaryEntryName>Cvlocation. Details</ccts:DictionaryEntryName>
+               <ccts:Definition>A Core Vocabulary Location</ccts:Definition>
+               <ccts:ObjectClass>Cvlocation</ccts:ObjectClass>
+            </ccts:Component>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element ref="cvc:GeographicID" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvlocation. Geographic Identifier. Identifier</ccts:DictionaryEntryName>
+                     <ccts:Definition>Geographic Identifier URI of a Location</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvlocation</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Geographic Identifier</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+                     <ccts:DataType>Identifier. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cvc:GeographicName" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvlocation. Geographic Name. Text</ccts:DictionaryEntryName>
+                     <ccts:Definition>Geographic Name of a Location</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvlocation</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Geographic Name</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Text</ccts:RepresentationTerm>
+                     <ccts:DataType>Text. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cac:Address" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvlocation. Address</ccts:DictionaryEntryName>
+                     <ccts:Definition>Location address</ccts:Definition>
+                     <ccts:Cardinality>0..n</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvlocation</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Address</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Address</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Address</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CvpersonType">
+      <xsd:annotation>
+         <xsd:documentation>
+            <ccts:Component>
+               <ccts:ComponentType>ABIE</ccts:ComponentType>
+               <ccts:DictionaryEntryName>Cvperson. Details</ccts:DictionaryEntryName>
+               <ccts:Definition>A Core Vocabulary Person</ccts:Definition>
+               <ccts:ObjectClass>Cvperson</ccts:ObjectClass>
+            </ccts:Component>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element ref="cvc:DeathDate" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvperson. Death Date. Date</ccts:DictionaryEntryName>
+                     <ccts:Definition>Date of Death of a Person</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvperson</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Death Date</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Date</ccts:RepresentationTerm>
+                     <ccts:DataType>Date. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cva:ResidencyJurisdiction" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvperson. Residency_ Jurisdiction. Jurisdiction</ccts:DictionaryEntryName>
+                     <ccts:Definition>Reference to residency jurisdiction</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvperson</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Residency</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Jurisdiction</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Jurisdiction</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Jurisdiction</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cva:CitizenshipJurisdiction" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvperson. Citizenship_ Jurisdiction. Jurisdiction</ccts:DictionaryEntryName>
+                     <ccts:Definition>Reference to citizenship jurisdiction</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvperson</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Citizenship</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Jurisdiction</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Jurisdiction</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Jurisdiction</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cva:DeathPlaceCvlocation" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvperson. Death Place_ Cvlocation. Cvlocation</ccts:DictionaryEntryName>
+                     <ccts:Definition>Place of death</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvperson</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Death Place</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Cvlocation</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Cvlocation</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Cvlocation</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cva:BirthPlaceCvlocation" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvperson. Birth Place_ Cvlocation. Cvlocation</ccts:DictionaryEntryName>
+                     <ccts:Definition>Place of birth</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvperson</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Birth Place</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Cvlocation</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Cvlocation</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Cvlocation</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cac:Person" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Cvperson. Person</ccts:DictionaryEntryName>
+                     <ccts:Definition>Information about the person</ccts:Definition>
+                     <ccts:Cardinality>1</ccts:Cardinality>
+                     <ccts:ObjectClass>Cvperson</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Person</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Person</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Person</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="JurisdictionType">
+      <xsd:annotation>
+         <xsd:documentation>
+            <ccts:Component>
+               <ccts:ComponentType>ABIE</ccts:ComponentType>
+               <ccts:DictionaryEntryName>Jurisdiction. Details</ccts:DictionaryEntryName>
+               <ccts:Definition>Jurisdiction</ccts:Definition>
+               <ccts:ObjectClass>Jurisdiction</ccts:ObjectClass>
+            </ccts:Component>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element ref="cvc:JurisdictionID" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Jurisdiction. Jurisdiction Identifier. Identifier</ccts:DictionaryEntryName>
+                     <ccts:Definition>Jurisdiction identifier</ccts:Definition>
+                     <ccts:Cardinality>1</ccts:Cardinality>
+                     <ccts:ObjectClass>Jurisdiction</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Jurisdiction Identifier</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+                     <ccts:DataType>Identifier. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cbc:Name" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Jurisdiction. Name. Text</ccts:DictionaryEntryName>
+                     <ccts:Definition>Name of an Cvaddress locator</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Jurisdiction</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Text</ccts:RepresentationTerm>
+                     <ccts:DataType>Text. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>
+<!-- ===== Copyright Notice ===== --><!--
+  Test copyright statement.
+-->
